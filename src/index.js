@@ -1,34 +1,32 @@
-const express = require('express')
-const morgan = require('morgan')
-const path = require('path')
-const { mongoose } = require('./db')
-const cors = require('cors')
+const express = require("express");
+const morgan = require("morgan");
+const path = require("path");
+const { mongoose } = require("./db");
+const cors = require("cors");
 
-const app = express()
-const port = 5000
+const app = express();
+const port = 5000;
 
 //settings
 
-app.set('port', process.env.PORT||port)
-
+app.set("port", process.env.PORT || port);
 
 //middleware
-app.use(cors())
-app.use(express.json())
-app.use(morgan('dev'))
+app.use(cors());
+app.use(express.json());
+app.use(morgan("dev"));
 
-// archivos estáticos 
+// archivos estáticos
 
-app.use(express.static(path.join(__dirname, 'public')))
-
+app.use(express.static(path.join(__dirname, "public")));
 
 //routes
 
-app.use('/api/users', require('./routes/users'))
-app.use('/api/parcels', require('./routes/parcels'))
+app.use("/api/users", require("./routes/users"));
+app.use("/api/parcels", require("./routes/parcels"));
 
 //inicialización de servidor
 
 app.listen(port, () => {
-    console.log(`Conectado a http://localhost:${port}`)
-})
+  console.log(`Conectado a http://localhost:${port}`);
+});
