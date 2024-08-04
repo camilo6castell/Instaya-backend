@@ -45,7 +45,7 @@ To install and run this project locally, follow these steps:
    ```env
    DB_KEY=your_mongodb_uri
    TOKEN_SECRET=secret_key_for_encryption
-   [Optional]PORT=your_port
+   PORT=your_port
    ```
 
 5. Start the server:
